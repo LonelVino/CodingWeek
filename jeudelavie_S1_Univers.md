@@ -12,7 +12,7 @@ Nous allons d'abord travailler pas à pas puis vous prendrez au fur et à mesure
 
 ## Créer un univers
 
-Pour créer l'univers, il faut identifier les données qu'il faudra manipuler, c'est-à-dire les données nécéssaires pour représenter cet univers, qui est un conteneur de cellules qui ne peuvent être que dans deux états. Puis, il s'agira ensuite de choisir les structures de données à utiliser.
+Pour créer l'univers, il faut identifier les données qu'il faudra manipuler, c'est-à-dire les données nécéssaires pour représenter cet univers, qui est un conteneur de cellules qui ne peuvent être que dans deux états. Puis, il s'agira ensuite de choisir les structures de données, dans le sens informatique, à utiliser.
 
  1. **Critères d'acceptance.**
 
@@ -57,7 +57,7 @@ Il suffit pour cela de :
  + Créer le fichier `generate_universe.py` dans le projet.
  + Créer et compléter une fonction `generate_universe` dans le fichier `generate_universe.py` de telle manière que le test précédent passe.
 
- On pourra par exemple, définir la fonction ci-dessous dans le fichier `generate_universe.py`
+ On pourra, par exemple, définir la fonction ci-dessous dans le fichier `generate_universe.py`
  
 ```PYTHON
 def generate_universe(size):
@@ -80,21 +80,21 @@ La dernière étape consiste en une étape de [refactoring](https://refactoring.
 Le [refactoring](https://en.wikipedia.org/wiki/Code_refactoring)(ou réusinage de code) est un principe de programmation qui consiste à changer la structure interne d’un logiciel sans en changer son comportement observable. C'est une étape qui doit toujours être exécutée quand les différents tests sont au vert et qui n'est pas obligatoire. Elle doit surtout permettre d'améliorer la **qualité du code** par exemple en améliorant :
  
  + **la conception** : decoupage en fonctions, modules ou classes afin de rendre votre code le plus simple possible.
- + **la lisibilité du code** : il faut ici prendre le temps d'appliquer les principes du [clean code](https://cleancoders.com/cart) introduit par Robert C. Martin dans l'ouvrage du même nom et dont un des principe est celui des boy-scouts (*« The Boy Scout Rule »*): *« Toujours laisser un endroit dans un état meilleur que celui où vous l’avez trouvé »*.
+ + **la lisibilité du code** : il faut ici prendre le temps d'appliquer les principes du [clean code](https://cleancoders.com/cart) introduit par Robert C. Martin dans l'ouvrage du même nom et dont un des principes est celui des boy-scouts (*« The Boy Scout Rule »*): *« Toujours laisser un endroit dans un état meilleur que celui où vous l’avez trouvé »*.
  
-Dans notre cas, une des premiers principes est de vérifier du bon nommage (variables, fonctions, packages, classes et cie) et de la présence de commentaires dans notre code. 
+Dans notre cas, un des premiers principes est de vérifier du bon nommage (variables, fonctions, packages, classes et cie) et de la présence de commentaires dans notre code. 
  
  Vous trouverez [ici](https://github.com/zedr/clean-code-python#objects-and-data-structures) quelques principes du clean code transposé au langage python. Prenez le temps de lire rapidement ce site et appliquer ces différents principes au code que vous allez écrire.
  
 Dans cette étape **<span style='color:black'> ETAPE REFACTOR</span>**, on peut aussi travailler à l'optimisation des performances du programme si cela s'avère vraiment nécessaire.
  
  
-Dans notre cas, on peut par exemple procéder à une étape de renommage sur la variable `s`. En effet, il peut par exemple être plus explicite de nommer cette variable `universe`. Pour réaliser cette étape de renommage, il est fortement conseillé d'utiliser les fonctionnalités de Refactoring de votre IDE. En effet, ici cela ne vous semble peut être pas très utile mais avec un code plus complexe, ce sera très utile. Avec PyCharm Edu, il vous suffit de selectionner la variable à renommer et à acceder au menu **Refactor** par un clic droit (ou par MAJ F6) et d'acceder à la fonctionnalité **Rename** pour saisir le nouveau nom `universe`. Toutes les variables `s` de la fonction `generate_universe` seront alors simultanément renommer en `universe`.
+Dans notre cas, on peut par exemple procéder à une étape de renommage sur la variable `s`. En effet, il peut par exemple être plus explicite de nommer cette variable `universe`. Pour réaliser cette étape de renommage, il est fortement conseillé d'utiliser les fonctionnalités de Refactoring de votre IDE. En effet, ici cela ne vous semble peut être pas très utile mais avec un code plus complexe, ce sera très utile.
 
 
 On peut aussi ici se poser la question du choix de la structure de données utilisée pour représenter notre univers. Nous allons faire des calculs numériques sur cet univers et il semble peut être intéressant d'utiliser la structure d'array `numpy` pour représenter cet univers. 
 
-Nous allons donc ajouter la bibliothèque  `numpy` à notre projet via PyCharmEdu ou avec la commande `pip3 install numpy` et nous allons donc modifier notre code (et les tests associés) pour représenter l'univers par un array `numpy`.
+Nous allons donc ajouter la bibliothèque `numpy` à notre projet avec la commande `pip3 install numpy` ou `pip install numpy` et nous allons donc modifier notre code (et les tests associés) pour représenter l'univers par un array `numpy`.
 
 **Faites ce travail de refactoring**. 
 
@@ -106,8 +106,7 @@ Nous allons donc ajouter la bibliothèque  `numpy` à notre projet via PyCharmEd
 
 1. **Après cette étape, n'oubliez pas de relancer les tests pour vérifier que le comportement de votre code n'a pas changé et que tout est encore bien AU VERT !**
 
-2. On vient ici de terminer la réalisation de l'étape *Créer l'univers*, il convient donc de **committer ce changement dans votre gestionnaire de version avec un message de commit explicite reprenant l'objectif de l'étape**. Pensez aussi à mettre à jour votre dépôt distant.
-
+2. On vient ici de terminer la réalisation de l'étape *Créer l'univers*, il convient donc de **committer ce changement dans votre gestionnaire de version avec un message de commit explicite reprenant l'objectif de l'étape**. 
 
 #### **A VOUS de JOUER!**
 
@@ -115,19 +114,19 @@ Vous allez maintenant procéder par itérations pour terminer l'écriture la  fo
 
 Chaque itération commence par un test qui échoue mais qui est écrit uniquement s'il apporte un nouveau comportement au système. A la fin de chaque itération, il faut donc se poser la question du prochain test à écrire. Dans notre cas, nous n'avons pas encore traiter l'ajout de la graine dans notre univers et le prochain test à écrire peut donc concerner la création de cet amorce et son ajout dans l'univers.
 
-##### Créer une amorce de type `r_pentomino` et positionnée la aléatoirement dans l'univers
+##### Créer une amorce de type `r_pentomino` et la positionner aléatoirement dans l'univers
 
 
  1. **Critères d'acceptance.**
 
- + Une amorce est crée.
+ + Une amorce est créée.
  + Cette amorce est placée aléatoirement dans l'univers du jeu de la vie.
 
  
  2. **Developpement en mode TDD**
 
 En appliquant le principe du TDD décrit précédemment, vous allez donc écrire le code pour terminer l'écriture de cette fonctionnalité.
-En particulier, il est conseillé d'itérer sur les tests décrits ci-dessous. Ces différents tests correspondant à chaque itération à l'étape **<span style='color:red'> ETAPE RED</span>**. Il vous est demandé de faire les deux autres étapes du cycle TDD pour passer ces tests en vert et améliorer la qualité de votre code.
+En particulier, il est conseillé d'itérer sur les tests décrits ci-dessous. Ces différents tests correspondants à chaque itération à l'étape **<span style='color:red'> ETAPE RED</span>**. Il vous est demandé de faire les deux autres étapes du cycle TDD pour passer ces tests en vert et améliorer la qualité de votre code.
 
 + **Itération 1 - Test : Une amorce de type `r_pentomino` est créée** 
 
@@ -159,7 +158,14 @@ def test_add_seed_to_universe():
 
 A la fin de ces 2 itérations, vous avez normalement écrit l'ensemble du code nécéssaire à la réalisation de la fonctionnalité 1 : **Représentation de l'univers avec une graine positionnée aléatoirement.**
 
-**<span style='color:blue'>Commiter maintenant vos changements dans votre gestionnaire de version</span>**
+#### <span style="color: #26B260">A ce stade du projet, vous avez atteint le JALON 3 : Ecrire du code dans une démarche TDD </span> 
+
+
+
+**<span style='color:blue'>Commiter maintenant vos changements dans votre gestionnaire de version. C'est aussi le moment de faire la mise en commun et la revue de code avec les autres membres de votre équipe.</span>**
+
+
+#### <span style="color: #26B260">A ce stade du projet, vous avez atteint le JALON 4 : une première vraie utilisation de git et gitlab avec mon groupe projet </span> 
 
 
 ## A propos de la couverture de code par vos tests
@@ -170,15 +176,15 @@ En règle générale, on considère qu'une couverture de code supérieure à 80%
 
 Pour connaitre le taux de couverture de notre projet, nous pouvons utiliser des bibliothèques python [`coverage`] et [`pytest_cov`] qu'il faut donc installer soit en ligne de commande soit depuis votre IDE.
 
-`pip3 install coverage`
+`pip3 install coverage` ou `pip install coverage`
 
-`pip3 install pytest-cov`
+`pip3 install pytest-cov` ou `pip install pytest-cov`
 
 Il faut ensuite vous placer dans le répertoire de votre projet et lancer la commande suivante :
 
 `pytest --cov=game_of_life --cov-report html test_*.py`
 
-Cette commande permet de tester les fichiers contenus dans le dossier 'game_of_life', crée un rapport en html et le place dans le répertoire `htmlcov` et utilise les tests qui sont dans ce répertoire et qui sont de la forme `test_[caracteres].py`.
+Cette commande permet de tester les fichiers contenus dans le dossier `game_of_life`, crée un rapport en html et le place dans le répertoire `htmlcov` et utilise les tests qui sont dans ce répertoire et qui sont de la forme `test_[caracteres].py`.
 
 L'ouverture du fichier `index.html`dans le répertoire `htmlcov`vous permet de visualiser un bilan du test de couverture qui devrait être bon dans la mesure où nous avons utilisé l'approche TDD. Un clic sur chacun des fichiers permet aussi d'avoir un bilan propre à chaque fichier.
 
@@ -188,6 +194,8 @@ L'ouverture du fichier `index.html`dans le répertoire `htmlcov`vous permet de v
 
 ![testcoverage](./Images/coveragebis.png)
 
+#### <span style="color: #26B260">A ce stade du projet, vous avez atteint le JALON 5 : une première couverture de mon projet par des tests </span> 
+
 
 ## A propos de la gestion des versions
 
@@ -195,7 +203,9 @@ L'ouverture du fichier `index.html`dans le répertoire `htmlcov`vous permet de v
 
 + <span style='color:blue'>Faire un commit dès que la réalisation d'une fonctionnalité ou d'une sous-fonctionnalité est finie.</span> 
 + <span style='color:blue'>Tagger à la fin de chaque journée votre dernier commit </span> 
-+ <span style='color:blue'>Pousser (Push) votre code vers votre dépôt distant sur GitLab.</span> 
++ <span style='color:blue'>De faire une revue de code au sein de l'équipe pour chaque fonctionnalité.</span>
++ <span style='color:blue'>De mettre le code stable sur la branche `master`.</span>
++ <span style='color:blue'>Pousser (Push) le code vers votre dépôt distant sur GitLab.</span> 
 + <span style='color:blue'>Faire un test de couverture de code à la fin de chaque journée et de pousser le bilan obtenu vers votre dépôt distant sur GitLab.</span>
 
 
