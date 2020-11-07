@@ -5,8 +5,8 @@ L'objectif de cette fonctionnalité est de mettre en oeuvre les règles du jeu d
 
 Il s'agit donc d'implémenter les traitements suivants :
 
-+ Etant données les coordonnées `x` et `y` de la `cellule` dans l' `univers`
-+ Examiner le voisinade de la cellume
++ Etant donné les coordonnées `x` et `y` de la `cellule` dans l' `univers`
++ Examiner le voisinage de la cellule
 + Décider si la cellule change d'état ou non (i.e. si elle survit ou si elle meurt).
 
 

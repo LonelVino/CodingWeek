@@ -3,7 +3,7 @@
 
 Il s'agit ici de mettre en oeuvre l'animation pour tout type d'univers du jeu de la vie en permettant le paramétrage de l'animation.
 
-En particulier, les commentaires de votre fonction d'animation devraient être a peu près identiques à ceux ci-dessous
+En particulier, les commentaires de votre fonction d'animation devraient être à peu près identiques à ceux ci-dessous
 
 ```PYTHON
 """
