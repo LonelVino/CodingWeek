@@ -11,7 +11,7 @@ L'étape 1 consiste en l'affichage de la grille de jeu initiale en Tkinter. Dans
 
 Pour cette étape, il est nécessaire de :
 
- + Definir avec quel type d'objets widgets notre grille sera représentée.
+ + Definir avec quels types d'objets widgets notre grille sera représentée.
  + Definir un certain nombre de constantes qui serviront à l'affichage de la grille comme par exemple les couleurs des différentes cellules en fonction de leur valeur, les couleurs des valeurs elle-mêmes, la taille de la fenêtre principale.
 
 
@@ -22,7 +22,7 @@ Pour l'affichage de notre grille de jeu avec Tkinter, nous allons utiliser le wi
 Une bonne explication de ce type de widget est disponible [ici](http://tkinter.fdex.eu/doc/toplww.html).
 
 
-+ Créer une fenêtre principale avec Tkinter, intitulée gameoflife et créer un widget `Toplevel`, intitulé gameoflife que vous associerez à votre fenêtre principale.
++ Créer une fenêtre principale avec Tkinter, intitulée `gameoflife `et créer un widget `Toplevel` que vous associerez à votre fenêtre principale.
 + Placer ce widget à l'aide de la fonction de placement `grid()` de Tkinter.
 
 ###  Representation de l'univers de cellules
@@ -38,6 +38,7 @@ Nous allons maintenant créer et afficher l'univers lui-même.
 
 
 Nous avons donc à ce stade deux objets  :
+
 + `grid_game` qui contient les données du jeu, donc les données à afficher (le **MODELE**).
 + `graphical_grid`, notre structure de données Tkinter qui contient la présentation de l'interface graphique (la **VUE**).
 
@@ -61,19 +62,24 @@ En fonction de votre réponse, il peut donc être utile de mettre le code corres
 
 
 
+#### <span style="color: #26B260">A ce stade du projet, vous avez atteint le JALON 12 : Se familiariser avec le design pattern MVC </span> 
+
+
 ## Etape 3 : Simuler !
-A ce stade du projet, vous devriez déjà pouvoir simuer le jeu de la vie via votre interface graphique. Prenez le temps de le faire et n'oubliez pas de lister les fonctionnalités qui vous semblent manquantes.
+A ce stade du projet, vous devriez déjà pouvoir simuler le jeu de la vie via votre interface graphique. Prenez le temps de le faire et n'oubliez pas de lister les fonctionnalités qui vous semblent manquantes.
 
 
 
 Nous avons maintenant terminé cette fonctionnalité, il vous faut :
 
-+ <span style='color:blue'>Faire un commit</span> 
-+ <span style='color:blue'>Pousser (Push) votre code vers votre dépôt distant sur GitLab.</span> 
++ <span style='color:blue'>Faire un commit de vos derniers changements.</span> 
++ <span style='color:blue'>Tagger ce dernier commit </span> 
++ <span style='color:blue'>Faire l'étape de synchronisation</span> 
++ <span style='color:blue'>Faire un test de couverture de code de votre projet et pousser le bilan obtenu vers votre dépôt distant sur GitLab.</span>
 
 
 
-Nous pouvons maintenant ajouter des moyens graphiques de configurer le jeu. Il s'agit de la [**Fonctionnalité 13** : Permettre la configuration du jeu via l'interface graphique](./config.md)
+Nous pouvons maintenant ajouter des outils graphiques permettant de configurer le jeu. Il s'agit de la [**Fonctionnalité 13** : Permettre la configuration du jeu via l'interface graphique](./config.md)
 
 
 

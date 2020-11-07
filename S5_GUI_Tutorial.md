@@ -2,13 +2,13 @@
 
 
 
-Il existe un certain nombre de frameworks pour le developpement d'interfaces graphiques en python. Une liste de ces différents outils est disponible [ici](https://wiki.python.org/moin/GuiProgramming).
+Il existe un certain nombre de frameworks pour le développement d'interfaces graphiques en python. Une liste de ces différents outils est disponible [ici](https://wiki.python.org/moin/GuiProgramming).
 
-En particulier, la bibliothèque standard de python possède un module appelé **Tkinter (Tk interface)** et qui permet de developper des interfaces graphiques. Nous nous contenterons d'utiliser ce module dans cette partie du projet qui ne nécessite pas d'installation.
+En particulier, la bibliothèque standard de python possède un module appelé **Tkinter (Tk interface)** et qui permet de développer des interfaces graphiques. Nous nous contenterons d'utiliser ce module dans cette partie du projet qui ne nécessite pas d'installation.
 
 Une documentation de ce module est disponible [ici](https://wiki.python.org/moin/TkInter).
 
-Vous allez maintenant faire un rapide tutorial (inspiré du cours d'OpenClassRooms [Apprenez à programmer en python ](https://openclassrooms.com/fr/courses/235344-apprenez-a-programmer-en-python/234859-des-interfaces-graphiques-avec-tkinter) ainsi que de ce [tutorial](https://www.python-course.eu/python_tkinter.php)) pour nous familiariser avec ce module et cet outil.
+Vous allez maintenant faire un rapide tutorial (inspiré du cours d'OpenClassRooms [Apprenez à programmer en python ](https://openclassrooms.com/fr/courses/235344-apprenez-a-programmer-en-python/234859-des-interfaces-graphiques-avec-tkinter) ainsi que de ce [tutorial](https://www.python-course.eu/python_tkinter.php)) pour  vous familiarisez avec ce module et cet outil.
 
 Le [tutorial de Vincent Maillol](https://vincent.developpez.com/cours-tutoriels/python/tkinter/apprendre-creer-interface-graphique-tkinter-python-3/) est aussi fortement conseillé.
 
@@ -148,9 +148,9 @@ root.mainloop()
 
 Le widget `Button` prend en paramètre un texte à afficher et une fonction à exécuter.
 
-La fonction à exécuter ne prend pas de paramètre et pour utiliser une foncion déjà ecrite il faut l'encapsuler avec le module [`partial`](https://docs.python.org/2/library/functools.html). 
+La fonction à exécuter ne prend pas de paramètres et pour utiliser une fonction déjà ecrite il faut l'encapsuler avec le module [`partial`](https://docs.python.org/2/library/functools.html). 
 
-A l'aide du tutorial disponible [ici](https://www.python-course.eu/tkinter_radiobuttons.php), explorez les autres widgets de Tkinter comme par exemples les [`Radiobutton`](https://www.python-course.eu/tkinter_radiobuttons.php) ou les [`Checkbutton`](https://www.python-course.eu/tkinter_checkboxes.php).
+A l'aide du tutorial disponible [ici](https://www.python-course.eu/tkinter_radiobuttons.php), explorer les autres widgets de Tkinter comme par exemple les [`Radiobutton`](https://www.python-course.eu/tkinter_radiobuttons.php) ou les [`Checkbutton`](https://www.python-course.eu/tkinter_checkboxes.php).
 
 
 ## Les Conteneurs
