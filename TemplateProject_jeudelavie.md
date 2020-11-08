@@ -9,7 +9,7 @@ L'**objectif** de ce mini-projet est de developper, de manière très incrément
 
 Le [jeu de la vie](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) est un [automate cellulaire](https://en.wikipedia.org/wiki/Cellular_automaton) imaginé par [John Horton Conway](https://en.wikipedia.org/wiki/John_Horton_Conway) au début du 19ème siècle. C'est probablement le plus connu de tous les automates cellulaires qui sont des modèles où chaque état conduit mécaniquement à l'état suivant à partir de règles pré-établies. 
 
-
+ 
 Si vous n'avez jamais entendu parler du jeu de la vie, prenez le temps de lire la [page Wikipédia](https://fr.wikipedia.org/wiki/Jeu_de_la_vie) le décrivant
 
 
