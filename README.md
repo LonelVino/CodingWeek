@@ -1,4 +1,6 @@
+
 # Ant Colony Optimisation (ACO)
+<font size=5 color=orange>Thanks to my team and the powerful teammates ! ! !</font>
 ![ants_colony_example](./assets/ants_colony_example.gif)   
 <B>Welcome to our chosen project for Coding Weeks, the simulation of ant colony optimisation (ACO)!</B>
 
