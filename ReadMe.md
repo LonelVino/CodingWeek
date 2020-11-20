@@ -1,58 +1,78 @@
-# Ant Colony Optimisation (ACO)
-![ants_colony_example](./assets/ants_colony_example.gif)   
-<B>Welcome to our chosen project for Coding Weeks, the simulation of ant colony optimisation (ACO)!</B>
+This project is the Game of Life project for the first week of CentraleSupelec Coding Weeks.
 
-## Hello! Meet the team! (Members, Alphabetically Ordered)
-
+Members (Alphabetically ordered)
+===================================
 - Chensheng Luo (délégué)
 - Haonan Lin
 - Mingshan Ye
 - Raven Bast
 - Yue Yang Oo
 
-## Group Wisdom in Action! (Rules)
+Usages  
+====================================
+By Command-line Interface 
+------------------------------------
+Input `python gameoflife.py [-h] [-c cmap] [-g n_generations] [-i interval] [-s] [-w writer] uY uX s sY sX` into the terminal.  
 
-Our ACO simulation is a zero-user simulation, once the map is defined.   
+Example :  
+```python gameoflife.py -c cool -g 100 -i 100 -s 50 50 planeur 45 45```  
 
-Imagine ants trying to find food and bring it back to their nests.  
-- In the real world, there are many obstacles that can hinder their movement.   
-- Individual ants do not have much intelligence and can only move around randomly.  
-- Once they find food, they will carry some of it and return back to the nest on the same path it came from before. Along the way, they will also deposit some pheromones to attract fellow ants. 
-- The amount of pheromone deposited on each cell decreases proportionally with each move. 
-- As time goes by, the pheromones previously deposited will evaporate, with the law *a(n+1) = (1-ratio_evaporation)×a(n) + deposit_pheromone*, where *deposit_pheromone* signifies the amount of pheromones deposited by ants currently on the cell.  
-- The ant can move to all neighbouring cells, with the exception of obstacle cells or the cell just travelled most recently. The probability for the ant to move to any cell is in proportion to the amount of pheromones on that cell.    
+You will get:   
+<img src="gif/planeur_universe_50-50_generations_100_interval_100.gif" width=427 height=320> 
 
-## Define your map, and watch how the ants beat you! (Usage)
+By Graphical Interface(We propose 2 Graphical Interface!)   
+------------------------------------
+GUI1:Input `python gui_gameoflife.py` and play with it.  
+You will get the following interface:   
+<img src="gif/demo_gui.jpg" width=484 height=360>   
 
-We provide two products, the Minimum Viable Product (MVP) and the Final Product (FP).  
+GUI2:Input `python graphical_gameoflife.py` and play with it.  
 
-### A Brief Introduction (MVP)
+You will get the following interface:   
+<img src="gif/demo_graphic.jpg" width=484 height=360>   
 
-To better understand the rules, you can run the MVP by inserting `python .\MVP\gui_mvp.py` in the terminal, following which there is nothing left for you to do. A randomly generated map with already pre-defined parameters will then be displayed. You can watch the ants (small black dots) which will move to the food (red chunks) while navigating around the obstacles (brown chunks) and deposit pheromone (green background cells) on the way back to its nest.   
+List Of Files
+====================================
+Main Files
+------------------------------------
+- graphical_gameoflife.py : Input `python graphical_gameoflife.py` to run the GUI of the game.  
+- gui_gameoflife.py : Input `python graphical_gameoflife.py` to run the 2nd GUI of the game.
+- gameoflife.py : Input `python gameoflife.py -h` for a list of arguments for game set-up from command-line interface. 
+  
 
-### I want to Define my Map! (FP)
+Saved GIFs Directory
+------------------------------------
+- ./gif/ : Generated GIFs are stored here if save is set to True.  
 
-THIS IS OUR FINAL PRODUCT!  
+Support Files
+------------------------------------
+- generate_universe.py : Includes functions to generate universe, create seed and add seed to universe.  
+- simulation.py : Includes functions to check cell survivability and generate over any number of iterations.  
+- animation.py : Includes functions to animate the game with an option to save the gif in the default folder << ./gif/ >>.  
+- dict_seed.py : Includes the dictionary of seeds
 
-You can run the FP by inserting `python gui.py` in the terminal. You can then see a welcome screen, where you can choose between **generate a random map** or **define your own map**.  
+Test Files
+------------------------------------
+- test_generate_universe.py  
+- test_simulation.py  
+- test_animation.py  
 
-- To randomly generate a map, click on **Generate Randomly**, then configure the parameters (the number of obstacle cells, the number of food cells etc.). Click on **Confirm**, and a map will be generated randomly according to your configuration parameters. Just sit back and enjoy the simulation!   
-- To draw your own map, click on **Define Map and Generate**. Before clicking on **Draw a map using a canvas with size input below**, input your desired map size (left integer as x-value, right interger as y-value). This will allow you to draw your map by dragging and holding your cursor. You can change your cell brush by clicking on **Nest Brush**, **Food Brush**, **Obstacle Brush** and **Eraser** as well as change the parameters for the nest and food brushes. After drawing, click on **FINISH** and the simulation will start.  
+Description Files
+-------------------------------------
+- ReadMe.md : Provides details on group members, usages, files and development timeline.
+- to_do.md : List possible functionalities to be added in the future.  
 
-## What Environment do I Need to Run the Simulation? (Computer Configurations)
-
-It is easy. Equip your computer with `Python 3` and `pygame`!  
-
-Simply run `pip install pygame` in the command terminal if you have not already installed it.
-
-## How did we achieve this? (Development Log)
-
-See the [Development Log](/development.md)
-
-## What are the files? (Structure of the files)
-
-See the [Structure](/structure.md)
-
-## It is your turn! :D
-
-**Feel free to play with your own map and enjoy yourself!**
+Development Log
+====================================
+**Day 4**  
+    Add new function by each one in its own branch  
+**Day 3 Afternoon**  
+    Function finished: Function 13: Graphic User Interface  
+    Object 2 finished  
+**Day 3 Morning**  
+    Function finished: Fonction 10: Program   
+    Object 1 finished    
+**Day 2**  
+    Function finished: Function 8: Visualisation and animation of game of life  
+**Day 1**  
+    Function finished: Function 1: Representation of universe and add a seed

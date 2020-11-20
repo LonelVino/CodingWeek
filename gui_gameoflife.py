@@ -17,23 +17,23 @@ import time
 
 CANVAS_HEIGHT = 700
 CANVAS_WIDTH = 700
-NoStop=True
+NoStop=True # boolean used to decide whether stop the animation
 universe_dict={}
-
-
 
 
 def adapt_universe(tk,canvas,universe,color_line='gray',color_background='white',draw_grill=False):
     '''
-    To create a graphical grid which satis
+    To create a graphical grid which satisfies the size of universe
     '''
     stop(canvas)
 
+    # Calculat the size
     num_rows_univ,num_cols_univ = universe.shape
     WIDTH_OF_CELL = np.floor(min((CANVAS_HEIGHT)/num_rows_univ,(CANVAS_WIDTH)/num_cols_univ))
     grid_reel_width = num_cols_univ * WIDTH_OF_CELL
     grid_reel_height = num_rows_univ * WIDTH_OF_CELL
 
+    # Draw the grill
     dict_lines={}
     dict_rec={}
     if draw_grill:
@@ -48,14 +48,21 @@ def adapt_universe(tk,canvas,universe,color_line='gray',color_background='white'
 
     canvas.grid(row=0,column=0)
     tk.update()
+
+    #returns the para and the dictionary for the graphical grid
     return (dict_lines,dict_rec,WIDTH_OF_CELL)
     
 def display_universe_canvas(tk,canvas,universe,graphical_grid,color_background='white',color_foreground='black'):
+    '''
+    To display the universe in canvas
+    '''
+    #Basic parameters
     num_rows_univ,num_cols_univ = universe.shape
     dict_lines=graphical_grid[0]
     dict_rec=graphical_grid[1]
     WIDTH_OF_CELL = graphical_grid[2]
 
+    #Draw the live cell
     for k in dict_rec.values():
         canvas.delete(k)
     for i in range(0,num_rows_univ):
@@ -68,6 +75,9 @@ def display_universe_canvas(tk,canvas,universe,graphical_grid,color_background='
     return (dict_lines,dict_rec,WIDTH_OF_CELL)
                 
 def display_animation(tk,canvas,universe,n_generations=None,interval=25,color_line='gray',color_background='white',color_foreground='black',draw_grill=True):
+    '''
+    To display the animation from the universe provided
+    '''
     global NoStop
     graphical_grid=adapt_universe(tk,canvas,universe,color_line=color_line,color_background=color_background,draw_grill=draw_grill)
     NoStop=True
@@ -84,8 +94,13 @@ def display_animation(tk,canvas,universe,n_generations=None,interval=25,color_li
             time.sleep(interval/1000)
 
 def begin(tk,canvas,universe_x_val,universe_y_val,position_x_val,position_y_val,seed_val,n_generation_val,interval_val):
+    '''
+    Function of the start buttom
+    '''
     global NoStop
     NoStop=True
+
+    #get value
     try:
         val_universe_x=universe_x_val.get()
         val_universe_y=universe_y_val.get()
@@ -99,6 +114,7 @@ def begin(tk,canvas,universe_x_val,universe_y_val,position_x_val,position_y_val,
     except:
         messagebox.showwarning('Warning','Only number accept or size')
 
+    # Put seed in the universe
     seed = create_seed(type_seed = seed_val.get())
     universe = generate_universe(size=(val_universe_x,val_universe_y))
     try:
@@ -108,22 +124,34 @@ def begin(tk,canvas,universe_x_val,universe_y_val,position_x_val,position_y_val,
     display_animation(tk,canvas,universe,n_generations=val_n_generation,interval=val_interval)
     
 def stop(canvas):
+    '''
+    Function of the stop buttom
+    '''
     global NoStop
     NoStop=False
     reset_universe_dict(universe_dict)
     canvas.delete('all')
 
 def welcome(tk,canvas):
+    '''
+    Function of the welcome(with nothing entered)
+    '''
     seed = create_seed(type_seed = "gun")
     universe = generate_universe(size=(75,75))
     universe = add_seed_to_universe(seed, universe,x_start=10, y_start=0)
     display_animation(tk,canvas,universe)
 
 def destroy(tk,canvas):
+    '''
+    Function of the quit buttom
+    '''
     stop(canvas)
     tk.destroy()
 
 def change_generation(generation_entry,generation_check_val):
+    '''
+    Function of the checkbottom of generation
+    '''
     generation_entry.delete(0, 'end')
     if generation_check_val.get() == 0:
         generation_entry.configure(state=NORMAL)
@@ -131,6 +159,9 @@ def change_generation(generation_entry,generation_check_val):
         generation_entry.configure(state=DISABLED)
         
 def gui(color_background='white'):
+    '''
+    gui main function
+    '''
     gameoflife = Tk()
     gameoflife.title('Game of life Conway')
     
@@ -194,7 +225,7 @@ def gui(color_background='white'):
     interval_val=IntVar(control,value=25)
     interval_entry=Entry(control,textvariable=interval_val,bg=color_background)
 
-    #2.7 Begin button,Stop button,Quit button
+    #2.11 Begin button,Stop button,Quit button
     begin_button = Button(control,text='Begin',command=partial(begin,gameoflife,simulation,universe_x_val,universe_y_val,position_x_val,position_y_val,seed_val,n_generation_val,interval_val))
     stop_button = Button(control,text='Stop',command=partial(stop,simulation))
     quit_button = Button(control,text='Quit',command=partial(destroy,gameoflife,simulation))

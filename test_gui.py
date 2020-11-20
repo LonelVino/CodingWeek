@@ -1,8 +1,4 @@
-from gui import main
+from gui_gameoflife import gui
 
-def test_main():
-    main()
-
-if __name__ == '__main__':
-    test_main()
-    
+if __name__=='__main__':
+    gui()
