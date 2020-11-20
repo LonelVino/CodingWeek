@@ -1,4 +1,4 @@
-<font color=orange size =5>Thanks to the teams and the powerful teammates!!</font> 
+## <font color=orange size =5>Thanks to the teams and the powerful teammates!!</font> 
 
 
 This project is the Game of Life project for the first week of CentraleSupelec Coding Weeks.
